@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Navbar from './Navbar';
 import AboutMe from './pages/AboutMe';
 import Contact from './pages/Contact';
@@ -27,9 +27,9 @@ export default function MainBody() {
     const handlePageChange = (page) => setCurrentPage(page);
 
     return (
-        <div>
+        <div className='content-wrapper'>
             <Navbar currentPage={currentPage} handlePageChange={handlePageChange} />
-            <div>
+            <div className='content'>
             {renderPage()}
             </div>
             <Footer />

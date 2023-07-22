@@ -1,9 +1,18 @@
 import React from 'react';
 
+const name = {
+    marginBottom: '2px',
+    paddingTop: '10px',
+    paddingLeft: '25px',
+    paddingRight: '32px',
+    paddingBottom: '10px',
+}
+
 export default function Navbar({ currentPage, handlePageChange }) {
     return (
         <div>
         <ul className="nav nav-tabs">
+            <h4 style={name}>Carolina Bermeo</h4>
             <li className="nav-item">
                 <a
                     href="#AboutMe"

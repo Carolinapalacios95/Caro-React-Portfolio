@@ -1,6 +1,16 @@
+const container = {
+    display: "flex",
+    flexWrap: "wrap",
+    gap: "25px",
+    padding: "20px",
+    alignItems: "center",
+    justifyContent: "center",
+  };
+
+
 export default function Footer() {
     return (
-        <div>
+        <div style={container}>
             <a href="https://github.com/Carolinapalacios95/" target="_blank" rel="noopener noreferrer">
                 <svg className="github" xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
                     <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47"/>
