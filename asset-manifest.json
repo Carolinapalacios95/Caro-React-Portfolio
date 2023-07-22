@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Caro-React-Portfolio/static/css/main.b0694714.css",
+    "main.js": "/Caro-React-Portfolio/static/js/main.76f7889e.js",
+    "static/js/787.c86e5f34.chunk.js": "/Caro-React-Portfolio/static/js/787.c86e5f34.chunk.js",
+    "index.html": "/Caro-React-Portfolio/index.html",
+    "main.b0694714.css.map": "/Caro-React-Portfolio/static/css/main.b0694714.css.map",
+    "main.76f7889e.js.map": "/Caro-React-Portfolio/static/js/main.76f7889e.js.map",
+    "787.c86e5f34.chunk.js.map": "/Caro-React-Portfolio/static/js/787.c86e5f34.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b0694714.css",
+    "static/js/main.76f7889e.js"
+  ]
+}
