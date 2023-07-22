@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button';
 
 export default function Contact() {
     const [form, setForm] = useState({});
-    const [validated, setValidated] = useState({});
+    const [errors, Validate] = useState({});
 
     const setField = (field, value) => {
         setForm({
@@ -15,40 +15,44 @@ export default function Contact() {
 
     const validateErrors = () => {
         const { name, email, message } = form;
-        const errors = {};
+        const newErrors = {};
 
         if (!name || name === '') {
-            errors.name = 'Please enter your name.';
+            newErrors.name = 'Please enter your name.';
         }
 
         if (!email || email === '') {
-            errors.email = 'Please enter your email.';
+            newErrors.email = 'Please enter your email.';
         } else if (!/@/.exec(email)) {
-            errors.email = 'Please enter a valid email.';
+            newErrors.email = 'Please enter a valid email.';
         }
 
         if (!message || message === '') {
-            errors.message = 'Please enter a message.';
+            newErrors.message = 'Please enter a message.';
         }
 
-        return errors;
+        return newErrors;
     };
 
     const handleSubmit = (e) => {
-        event.preventDefault();
+        e.preventDefault();
 
-        const errors = validateErrors();
+        const newErrors = validateErrors();
 
-        if (Object.keys(errors).length > 0) {
-            setErrors(errors);
+        if (Object.keys(newErrors).length > 0) {
+            Validate(newErrors);
             return;
         }
+    }
+
+    const button = {
+        marginTop: "25px",
     }
 
     return (
         <div>
             <h1>Contact</h1>
-            <Form>
+            <Form style={{ width: '550px' }}>
                 <Form.Group>
                     <Form.Label>Name</Form.Label>
                     <Form.Control
@@ -56,12 +60,40 @@ export default function Contact() {
                         type="text"
                         placeholder="Enter your name"
                         onChange={e => setField('name', e.target.value)}
-                        onBlur={e => setErrors(e.target.value === '' ? { name: 'Please enter your name.' } : {})}
+                        onBlur={e => Validate(e.target.value === '' ? { name: 'Please enter your name.' } : {})}
                         isInvalid={!!errors.name}
                     />
                     <Form.Control.Feedback type="invalid">{errors.message}</Form.Control.Feedback>
                 </Form.Group>
-                <Button variant="primary" type="submit" onClick={handleSubmit}>Submit</Button>
+
+                <Form.Group>
+                    <Form.Label>Email</Form.Label>
+                    <Form.Control
+                        required
+                        type="email"
+                        placeholder="Enter your email"
+                        onChange={e => setField('email', e.target.value)}
+                        onBlur={e => Validate(e.target.value === '' ? { email: 'Please enter your email.' } : {})}
+                        isInvalid={!!errors.email}
+                    />
+                    <Form.Control.Feedback type="invalid">{errors.message}</Form.Control.Feedback>
+                </Form.Group>
+
+                <Form.Group>
+                    <Form.Label>Message</Form.Label>
+                    <Form.Control
+                        required
+                        as="textarea"
+                        rows={3}
+                        placeholder="Enter your message"
+                        onChange={e => setField('message', e.target.value)}
+                        onBlur={e => Validate(e.target.value === '' ? { message: 'Please enter a message.' } : {})}
+                        isInvalid={!!errors.message}
+                    />
+                    <Form.Control.Feedback type="invalid">{errors.message}</Form.Control.Feedback>
+                </Form.Group>
+
+                <Button variant="outline-light" type="submit" onClick={handleSubmit} size="md" style={button} >Submit</Button>
             </Form>
         </div>
     );

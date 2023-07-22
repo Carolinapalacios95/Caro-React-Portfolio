@@ -10,9 +10,9 @@ const name = {
 
 export default function Navbar({ currentPage, handlePageChange }) {
     return (
-        <div>
-        <ul className="nav nav-tabs">
-            <h4 style={name}>Carolina Bermeo</h4>
+        <div className='navbar'>
+        <h4 style={name}>Carolina Bermeo</h4>
+        <ul className="nav nav-tabs justify-content-end">
             <li className="nav-item">
                 <a
                     href="#AboutMe"
@@ -21,7 +21,7 @@ export default function Navbar({ currentPage, handlePageChange }) {
                     // If it is, we set the current page to 'nav-link-active', otherwise we set it to 'nav-link'
                     className={currentPage === 'AboutMe' ? 'nav-link active' : 'nav-link'}
                 >
-                Portfolio
+                About Me
                 </a>
             </li>
             <li className="nav-item">
@@ -46,12 +46,12 @@ export default function Navbar({ currentPage, handlePageChange }) {
             </li>
             <li className="nav-item">
                 <a
-                    href="#Projects"
-                    onClick={() => handlePageChange('Projects')}
+                    href="#Portfolio"
+                    onClick={() => handlePageChange('Portfolio')}
                    
-                    className={currentPage === 'Projects' ? 'nav-link active' : 'nav-link'}
+                    className={currentPage === 'Portfolio' ? 'nav-link active' : 'nav-link'}
                 >
-                Projects
+                Portfolio
                 </a>
             </li>
         </ul>

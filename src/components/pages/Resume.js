@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Resume() {
     return (
-        <div>
+        <>
             <h1>Resume</h1>
             <h2>Front-End Proficiencies</h2>
             <ul>
@@ -26,6 +26,6 @@ export default function Resume() {
                 <li>Object Oriented Programming (OOP)</li>
                 <li>Object-Relational Mapping (ORM)</li>
             </ul>
-        </div>
+        </>
     );
 }
