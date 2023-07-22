@@ -44,6 +44,10 @@
   font-weight: 700;
 }
 
+/* .project-title img {
+  background-color: transparent;
+} */
+
 .project-title {
   background-color: rgb(179, 81, 189);
 }
@@ -54,7 +58,7 @@
   background-color: rgb(179, 81, 189);
   position: absolute;
   bottom: 40px;
-  left: 30px;
+  left: 275px;
   right: 5px;
 }
 
